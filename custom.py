@@ -184,7 +184,6 @@ if __name__ == '__main__':
                         metavar="/path/to/logs/",
                         help='Logs and checkpoints directory (default=logs/)')
     parser.add_argument('--save', required=False,
-                        metavar="saved/model/path",
                         help='Save model to specified path')
     args = parser.parse_args()
 
@@ -250,6 +249,7 @@ if __name__ == '__main__':
               "Use 'train'".format(args.command))
 
     if args.save:
-        model_file = "model_{}.h5".format(CustomConfig.NAME),
+        model_file = os.path.join(ROOT_DIR,
+                                  model.save_weights('model_weights.h5'))
         model.save_weights(model_file)
 
