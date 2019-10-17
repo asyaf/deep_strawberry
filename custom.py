@@ -183,7 +183,7 @@ if __name__ == '__main__':
                         default=DEFAULT_LOGS_DIR,
                         metavar="/path/to/logs/",
                         help='Logs and checkpoints directory (default=logs/)')
-    parser.add_argument('--save', required=False,
+    parser.add_argument('--save', required=False, action="store_true",
                         help='Save model to specified path')
     args = parser.parse_args()
 
